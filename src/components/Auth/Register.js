@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import Logon from '../../assets/img/logon.png';
 import Banner from '../../assets/img/auth/banner.svg';
 import './Auth.css'
+import {
+	BrowserRouter as Router,
+	Route,
+	Link,
+ } from "react-router-dom";
 
 export const Register = () => {
 	return (
@@ -17,6 +22,7 @@ export const Register = () => {
 							<img src={Logon} style={{ width: '50px', marginBottom: '-20px', marginTop: '-25px' }} />
 							<strong>PBC App</strong>
 						</h1>
+						<p className="text-center text-black"><strong>REGISTRARSE</strong></p>
 						<form>
 							<div className="form-group mb-3">
 								<label className="form-label text-secondary">Usuario</label>
@@ -27,13 +33,11 @@ export const Register = () => {
 								<input className="form-control" type="password" required />
 							</div>
 							<button className="btn btn-dark mt-2" type="submit">
-                Registrarse
+                				Registrarse
 							</button>
 						</form>
 						<p className="mt-3 mb-0">
-							<a className="text-info small" href="#">
-								Perdiste tu usuario o contraseña?
-							</a>
+							<Link to="/auth/login" className = "text-info small">Ya tienes una cuenta?. Inicia sesion aqui.</Link>
 						</p>
 					</div>
 				</div>

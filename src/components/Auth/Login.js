@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Logon from '../../assets/img/logon.png';
 import Banner from '../../assets/img/auth/banner.svg';
+import {
+	BrowserRouter as Router,
+	Route,
+	Link,
+ } from "react-router-dom";
+
 import './Auth.css'
 
 export const Login = () => {
@@ -15,6 +21,7 @@ export const Login = () => {
 							<img src={Logon} style={{ width: '50px', marginBottom: '-20px', marginTop: '-25px' }} />
 							<strong>PBC App</strong>
 						</h1>
+						<p className="text-center text-black"><strong>INICIAR SESION</strong></p>
 						<form>
 							<div className="form-group mb-3">
 								<label className="form-label text-secondary">Usuario</label>
@@ -27,11 +34,16 @@ export const Login = () => {
 							<button className="btn btn-dark mt-2" type="submit">
 								Iniciar sesion
 							</button>
+							
 						</form>
 						<p className="mt-3 mb-0">
 							<a className="text-info small" href="#">
 								Perdiste tu usuario o contraseña?
 							</a>
+							<br/>
+							<Link to="/auth/register" className = "text-info small">No tienes una cuenta?, Registrate aqui</Link>
+
+
 						</p>
 					</div>
 				</div>
