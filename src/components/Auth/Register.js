@@ -27,7 +27,7 @@ export const Register = () => {
 								<input className="form-control" type="password" required />
 							</div>
 							<button className="btn btn-dark mt-2" type="submit">
-								Registrarse
+								Registrarseeeeeeeeeeeee
 							</button>
 						</form>
 						<p className="mt-3 mb-0">
