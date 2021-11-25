@@ -42,8 +42,6 @@ export const Login = () => {
 							</a>
 							<br/>
 							<Link to="/auth/register" className = "text-info small">No tienes una cuenta?, Registrate aqui</Link>
-
-
 						</p>
 					</div>
 				</div>

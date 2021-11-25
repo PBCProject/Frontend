@@ -1,7 +1,7 @@
 import { Login } from './components/Auth/Login';
 import { Register } from './components/Auth/Register';
-
 import 'bootswatch/dist/darkly/bootstrap.min.css';
+
 import {
   BrowserRouter,
   Routes,
