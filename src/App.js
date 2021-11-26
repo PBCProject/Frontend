@@ -1,26 +1,10 @@
-import { Login } from './components/Auth/Login';
-import { Register } from './components/Auth/Register';
-import 'bootswatch/dist/darkly/bootstrap.min.css';
-
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-
+import 'bootswatch/dist/flatly/bootstrap.min.css';
+import './assets/css/App.css';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { AppRoute } from './routes/AppRoute';
 
 function App() {
-  return (
-
-    <BrowserRouter>
-      <Routes>
-        <Route path="/auth/login" element={<Login />} />
-        <Route path="/auth/register" element={<Register />} />
-      </Routes>
-    </BrowserRouter>
-
-  );
+	return <AppRoute />;
 }
 
 export default App;

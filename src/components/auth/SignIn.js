@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
 import Logon from '../../assets/img/logon.png';
 import Banner from '../../assets/img/auth/banner.svg';
+import {Link} from "react-router-dom";
 import './Auth.css'
-import {
-	BrowserRouter as Router,
-	Route,
-	Link,
- } from "react-router-dom";
 
-export const Register = () => {
+export const SignIn = () => {
 	return (
 		<div className="container-fluid">
 			<div className="row mh-100vh">
-			<div className="col-lg-6 d-flex align-items-end" id="bg-block" style={{ backgroundImage: `url(${Banner})`, backgroundSize: '72%', backgroundPosition: 'center center' }} />
-
 				<div
 					id="login-block"
 					className="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0">
@@ -22,7 +16,7 @@ export const Register = () => {
 							<img src={Logon} style={{ width: '50px', marginBottom: '-20px', marginTop: '-25px' }} />
 							<strong>PBC App</strong>
 						</h1>
-						<p className="text-center text-black"><strong>REGISTRARSE</strong></p>
+						<p className="text-center text-black"><strong>INICIAR SESION</strong></p>
 						<form>
 							<div className="form-group mb-3">
 								<label className="form-label text-secondary">Usuario</label>
@@ -33,14 +27,19 @@ export const Register = () => {
 								<input className="form-control" type="password" required />
 							</div>
 							<button className="btn btn-dark mt-2" type="submit">
-                				Registrarse
+								Iniciar sesion
 							</button>
 						</form>
 						<p className="mt-3 mb-0">
-							<Link to="/auth/login" className = "text-info small">Ya tienes una cuenta?. Inicia sesion aqui.</Link>
+							<a className="text-info small" href="#">
+								Perdiste tu usuario o contraseña?
+							</a>
+							<br/>
+							<Link to="/auth/register" className = "text-info small">No tienes una cuenta?, Registrate aqui</Link>
 						</p>
 					</div>
 				</div>
+				<div className="col-lg-6 d-flex align-items-end" id="bg-block" style={{ backgroundImage: `url(${Banner})`, backgroundSize: '72%', backgroundPosition: 'center center' }} />
 			</div>
 		</div>
 	);
