@@ -1,11 +1,11 @@
-export const Credits = () => {
-    return(
+export const Solicitar = () => {
+	return (
         <>
-		<div class="container">
+            <div class="container">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title">Solicitar credito</h5>
+				<h5 class="modal-title">Solicitar crédito</h5>
 				
 			</div>
 			<div class="modal-body">
@@ -39,5 +39,4 @@ export const Credits = () => {
 		</div>
         </>
     );
-}
-
+};

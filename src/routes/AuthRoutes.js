@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router';
-import { SignIn } from '../components/auth/SignIn';
-import { SignUp } from '../components/auth/SignUp';
+import { SignIn } from '../components/Auth/SignIn';
+import { SignUp } from '../components/Auth/SignUp';
 
 export const AuthRoutes = () => {
 	return (
