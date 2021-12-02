@@ -1,7 +1,7 @@
 export function Registeru(){
     return ( 
-        <>  
-        <div className="modal" id="registerU" role="dialog" aria-labelledby="registerULabel" aria-hidden="true">
+      <div>
+        <div className="modal" id="registerU">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
@@ -69,9 +69,9 @@ export function Registeru(){
                 </div>
             </div>
         </div>
+</div>
+        
 
-    
-
-        </>
+     
     );
 };

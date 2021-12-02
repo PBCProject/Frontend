@@ -7,11 +7,10 @@ import { Registeru } from './Registeru';
 
 export const SignIn = () => {
 	return (
+		<>
 		<div className="container-fluid">
 			<div className="row mh-100vh">
-				<div
-					id="login-block"
-					className="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0">
+				<div className="col-10 col-sm-8 col-md-6 col-lg-6 offset-1 offset-sm-2 offset-md-3 offset-lg-0 align-self-center d-lg-flex align-items-lg-center align-self-lg-stretch bg-white p-5 rounded rounded-lg-0 my-5 my-lg-0" id="login-block" >
 					<div className="m-auto w-lg-75 w-xl-50">
 						<h1 className="text-dark text-info fw-light mb-5" style={{ color: 'black' }}>
 							<img src={Logon} style={{ width: '50px', marginBottom: '-20px', marginTop: '-25px' }} />
@@ -28,24 +27,24 @@ export const SignIn = () => {
 								<input className="form-control" type="password" required />
 							</div>
 							<button className="btn btn-dark mt-2" type="submit">
-								Iniciar sesion
-							</button>
-								
+								Iniciar sesión
+							</button>						
 						</form>
-	
-						<p className="mt-3 mb-0">
-							<a className="text-info small" href="#">
-								Perdiste tu usuario o contraseña?
-							</a>
+						<button className="btn btn-dark mt-2" type="button" data-bs-toggle="modal" data-bs-target="#registerU">
+                				Registrarse
+						</button>
+							<p className="mt-3 mb-0">
+								<a className="text-info small" href="#">
+									Perdiste tu usuario o contraseña?
+								</a>
 							<br/>
-					
-						</p>
+							</p>						
 					</div>
-					</div>
-				
+				</div>		
 				<div className="col-lg-6 d-flex align-items-end" id="bg-block" style={{ backgroundImage: `url(${Banner})`, backgroundSize: '72%', backgroundPosition: 'center center' }} />
-			</div>
-			<Registeru/>
+			</div>		
 		</div>
+		<Registeru/>
+</>
 	);
 };
