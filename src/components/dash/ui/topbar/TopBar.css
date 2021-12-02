@@ -9,11 +9,13 @@
 }
 
 #menu ul li {
+	display: -ms-inline-grid;
 	display: inline-grid;
 }
 
 #menu ul li a {
 	color: white;
+	display: -ms-grid;
 	display: grid;
 	padding: 10px 10px;
 	text-decoration: none;
