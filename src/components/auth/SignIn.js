@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Logon from '../../assets/img/logon.png';
 import Banner from '../../assets/img/auth/banner.svg';
-import {Link} from "react-router-dom";
 import './Auth.css'
-import { Registeru } from './Registeru'
+import {Link} from "react-router-dom";
+import { Registeru } from './Registeru';
 
 export const SignIn = () => {
 	return (
