@@ -1,41 +1,26 @@
+import { Formsencillo } from "../ui/forms/Formsencillo";
+
+const SelectOpt = [
+
+    {llave: '1' , valor: '1'},
+    {llave: '2' , valor: '2'},
+    {llave: '3' , valor: '3'},
+    {llave: '4' , valor: '4'},
+    {llave: '5' , valor: '5'},
+    {llave: '6' , valor: '6'},
+    {llave: '7' , valor: '7'},
+    {llave: '8' , valor: '8'},
+    {llave: '9' , valor: '9'},
+    {llave: '10' , valor: '10'},
+    {llave: '11' , valor: '11'},
+    {llave: '12' , valor: '12'}
+
+];
+
 export const Prorroga = () => {
 	return (
         <>
-            <div class="container">
-		    <div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">Solicitar prórroga</h5>
-				
-			</div>
-			<div class="modal-body">
-				<form id="primero">
-                    <label htmlFor=""> Motivo:</label>
-                    <input type="textarea" height="auto" className="form-control"/>
-                    <div>
-                    <label htmlFor=""> Cuotas:</label>
-                    <select type="number" className="form-control">
-                        <option value={1}>1</option>
-                        <option value={2}>2</option>
-                        <option value={3}>3</option>
-                        <option value={4}>4</option>
-                        <option value={5}>5</option>
-                        <option value={6}>6</option>     
-                    </select>
-                    </div>
-                    <div>
-                    <p>   </p>
-                    <button type="button" class="btn btn-primary">Calcular</button>
-                    </div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary">Solicitar</button>
-							<button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-						</div>
-                </form>
-			</div>
-			</div>
-		</div>
-		</div>
+            <Formsencillo  title="Solicitar Prorroga"  titlebox="Motivo" titlesel="Cuotas" SelectOpt={SelectOpt}></Formsencillo>
         </>
     );
 };
