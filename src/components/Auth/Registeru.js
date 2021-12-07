@@ -1,29 +1,27 @@
 export function Registeru() {
 	return (
 		<div>
-			<div className="modal" id="registerU">
-				<div className="modal-dialog" role="document">
-					<div className="modal-content">
+			<div id="registerU">
+				<div role="document">
+					<div className="content">
 						<div className="modal-header">
-							<h5 className="modal-title" id="registerULabel">
+							<h5 className="title" id="registerULabel">
 								Registrarse
 							</h5>
-							<button type="button" className="close" data-bs-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
+
 						</div>
 						<div className="modal-body">
 							<form>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Nombre Completo</label>
-									<input type="text" className="form-control" id="exampleInputPassword1" placeholder="Nombre" />
+									<label htmlFor="allname">Nombre Completo</label>
+									<input type="text" className="form-control" id="allname" placeholder="Nombre" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Fecha de Nacimiento</label>
-									<input type="date" className="form-control" id="exampleInputPassword1" placeholder="Fecha de Nacimiento" />
+									<label htmlFor="bDay">Fecha de Nacimiento</label>
+									<input type="date" className="form-control" id="bDay" placeholder="Fecha de Nacimiento" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Tipo de Documento</label>
+									<label htmlFor="TId">Tipo de Documento</label>
 									<select className="form-control">
 										<option>C.C.</option>
 										<option>T.E.</option>
@@ -31,24 +29,24 @@ export function Registeru() {
 									</select>
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Numero de Documento</label>
-									<input type="number" className="form-control" id="exampleInputPassword1" placeholder="Numero de Documento" />
+									<label htmlFor="NumID">Numero de Documento</label>
+									<input type="number" className="form-control" id="NumID" placeholder="Numero de Documento" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Fecha de Espedición del Documento</label>
-									<input type="date" className="form-control" id="exampleInputPassword1" placeholder="Fecha de Nacimiento" />
+									<label htmlFor="ExpDate">Fecha de Espedición del Documento</label>
+									<input type="date" className="form-control" id="ExpDate" placeholder="Fecha de Nacimiento" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Valor de Ingresos</label>
-									<input type="number" className="form-control" id="exampleInputPassword1" placeholder="Valor de Ingresos" />
+									<label htmlFor="ValIn">Valor de Ingresos</label>
+									<input type="number" className="form-control" id="ValIn" placeholder="Valor de Ingresos" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Valor de Egresos</label>
-									<input type="number" className="form-control" id="exampleInputPassword1" placeholder="Valor de Egresos" />
+									<label htmlFor="ValEg">Valor de Egresos</label>
+									<input type="number" className="form-control" id="ValEg" placeholder="Valor de Egresos" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputEmail1">Email</label>
-									<input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+									<label htmlFor="Email">Email</label>
+									<input type="email" className="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email" />
 									<small id="emailHelp" className="form-text text-muted">
 										We'll never share your email with anyone else.
 									</small>
@@ -58,15 +56,13 @@ export function Registeru() {
 									<input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
 								</div>
 								<div className="form-group">
-									<label htmlFor="exampleInputPassword1">Confirmar contraseña</label>
-									<input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+									<label htmlFor="exampleInputPassword2">Confirmar contraseña</label>
+									<input type="password" className="form-control" id="exampleInputPassword2" placeholder="Password" />
 								</div>
 							</form>
 						</div>
 						<div className="modal-footer">
-							<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
-								Cerrar
-							</button>
+							<button type="button" className="btn btn-secondary">Cancelar</button>
 							<button type="button" className="btn btn-secondary">
 								Registrarse
 							</button>

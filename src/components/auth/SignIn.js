@@ -3,7 +3,6 @@ import Logon from '../../assets/img/logon.png';
 import Banner from '../../assets/img/auth/banner.svg';
 import './Auth.css'
 import {Link} from "react-router-dom";
-import { Registeru } from './Registeru';
 
 export const SignIn = () => {
 	return (
@@ -30,9 +29,7 @@ export const SignIn = () => {
 								Iniciar sesión
 							</button>						
 						</form>
-						<button className="btn btn-dark mt-2" type="button" data-bs-toggle="modal" data-bs-target="#registerU">
-                				Registrarse
-						</button>
+						<Link to="/auth/register" className = "text-info small">No tienes una cuenta?, Registrate aqui</Link>
 							<p className="mt-3 mb-0">
 								<a className="text-info small" href="#">
 									Perdiste tu usuario o contraseña?
@@ -44,7 +41,7 @@ export const SignIn = () => {
 				<div className="col-lg-6 d-flex align-items-end" id="bg-block" style={{ backgroundImage: `url(${Banner})`, backgroundSize: '72%', backgroundPosition: 'center center' }} />
 			</div>		
 		</div>
-		<Registeru/>
+
 </>
 	);
 };

@@ -9,7 +9,9 @@ const BarItems = [
 	{ route: '/certificados', title: 'Certificados' },
 	{ route: '/pagar', title: 'Pagar' },
 	{ route: '/mensajes', title: 'Mensajes' },
+	{ route: '/cuentas', title: 'Cuentas' },
 	{ route: '/help', title: 'Ayuda' },
+
 ];
 
 export const TopBar = () => {

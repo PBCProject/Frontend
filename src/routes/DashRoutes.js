@@ -20,7 +20,8 @@ export const DashRoutes = () => {
 			<Route path="prorroga" element={<Dash Element={Prorroga} title="Prorroga" />} />
 			<Route path="certificados" element={<Dash Element={Certificados} title="Certificados" />} />
 			<Route path="pagar" element={<Dash Element={Pagar} title="Pagar" />} />
-			<Route path="mensajes" element={<Dash Element={Mensajes} title="Mensajes" />} />
+			<Route path="pagar" element={<Dash Element={Pagar} title="Pagar" />} />
+			<Route path="cuentas" element={<Dash Element={Accounts} title="Cuentas" />} />
 			
 
 			<Route path="help" element={<Dash Element={Help} title="Ayuda" />} />
