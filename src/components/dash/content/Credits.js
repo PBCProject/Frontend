@@ -50,7 +50,7 @@ export const Credits = () => {
                                                 <td>{credit.id}</td>
                                                 <td>{credit.creditResponse.isApproved ? "Aprobado" : "No aprobado" }</td>
                                                 <td>{credit.startDate}</td>
-                                                <td>{credit.nextPayment}</td>
+                                                <td>{credit.nextPaymentDate}</td>
                                                 <td>
                                                     <button className="btn btn-sm btn-primary">
                                                         <i className="fa fa-edit"></i>
