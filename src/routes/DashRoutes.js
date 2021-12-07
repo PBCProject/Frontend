@@ -15,7 +15,7 @@ import { Dash } from '../components/dash/Dash';
 export const DashRoutes = () => {
 	return (
 		<Routes>
-			<Route path="solicitar" element={<Dash Element={Solicitar} title="Solicitar" />} />
+			<Route path="credits" element={<Dash Element={Credits} title="Créditos" />} />
 			<Route path="historial" element={<Dash Element={Historial} title="Historial" />} />
 			<Route path="prorroga" element={<Dash Element={Prorroga} title="Prorroga" />} />
 			<Route path="certificados" element={<Dash Element={Certificados} title="Certificados" />} />

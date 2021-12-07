@@ -3,7 +3,7 @@ import { BarItem } from './BarItem';
 import './TopBar.css';
 
 const BarItems = [
-	{ route: '/solicitar', title: 'Solicitar crédito' },
+	{ route: '/credits', title: 'Créditos' },
 	{ route: '/historial', title: 'Historial' },
 	{ route: '/prorroga', title: 'Prórroga' },
 	{ route: '/certificados', title: 'Certificados' },
