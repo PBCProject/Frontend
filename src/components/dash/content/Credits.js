@@ -37,20 +37,22 @@ export const Credits = () => {
                                         <tr>
                                             
                                             <th>Credito</th>
-                                            <th>Estado</th>
+                                            <th>Aprobado</th>
                                             <th>Fecha</th>  
                                             <th>Proximo Pago</th>
+                                            <th>Estado</th>
                                                                              
-                                            <th>Acción</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {data.getCredits.map(credit => (
                                             <tr key={credit.id}>
                                                 <td>{credit.id}</td>
-                                                <td>{credit.creditResponse.isApproved ? "Aprobado" : "No aprobado" }</td>
+                                                <td>{credit.creditResponse.isApproved ? "Aprobado" : "Rechazado" }</td>
                                                 <td>{credit.startDate}</td>
                                                 <td>{credit.nextPaymentDate}</td>
+                                                <td style={{"color":credit.creditState.color}} >{credit.creditState.name}</td>
                                                 <td>
                                                     <button className="btn btn-sm btn-primary">
                                                         <i className="fa fa-edit"></i>

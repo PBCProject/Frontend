@@ -42,8 +42,10 @@ export const Navbar = ({ title = 'Dashboard' }) => {
 					<ul className="navbar-nav justify-content-end">
 						<li className="nav-item d-flex align-items-center">
 							<a className="nav-link text-body font-weight-bold px-0">
+							<Link to="/profile" className="nav-link text-body p-0">
 								<i className="fa fa-user me-sm-1" />
 								<span className="d-sm-inline d-none">User</span>
+							</Link>
 							</a>
 						</li>
 						<li className="nav-item px-3 d-flex align-items-center">

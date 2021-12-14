@@ -10,6 +10,7 @@ const BarItems = [
 	{ route: '/pagar', title: 'Pagar' },
 	{ route: '/mensajes', title: 'Mensajes' },
 	{ route: '/cuentas', title: 'Cuentas' },
+	{ route: '/registerf', title: 'Resgitro' },
 	{ route: '/help', title: 'Ayuda' },
 
 ];

@@ -10,7 +10,9 @@ import { Mensajes} from '../components/dash/content/Mensajes';
 import { Help } from '../components/dash/content/Help';
 import { Home } from '../components/dash/content/Home';
 import { Settings } from '../components/dash/content/Settings';
+import { Profile } from '../components/dash/content/Profile';
 import { Dash } from '../components/dash/Dash';
+import { Mregfun } from '../components/dash/content/Mregfun';
 
 export const DashRoutes = () => {
 	return (
@@ -22,10 +24,11 @@ export const DashRoutes = () => {
 			<Route path="pagar" element={<Dash Element={Pagar} title="Pagar" />} />
 			<Route path="pagar" element={<Dash Element={Pagar} title="Pagar" />} />
 			<Route path="cuentas" element={<Dash Element={Accounts} title="Cuentas" />} />
-			
+			<Route path="registerf" element={<Dash Element={Mregfun} title="Registro" />} />
 
 			<Route path="help" element={<Dash Element={Help} title="Ayuda" />} />
 			<Route path="settings" element={<Dash Element={Settings} title="Configuraciones" />} />
+			<Route path="profile" element={<Dash Element={Profile} title="Perfil" />} />
 			<Route path="/" element={<Dash Element={Home} title="Pagina de Inicio" />} />
 		</Routes>
 	);
