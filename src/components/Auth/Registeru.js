@@ -33,7 +33,7 @@ const CREATE_USER = gql`
 `;
 
 export const Registeru = () => {
-	const [createUser] = useMutation(CREATE_USER);
+
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -44,6 +44,7 @@ export const Registeru = () => {
 	const [revenueValue, setRevenueValue] = useState('');
 	const [expensesValue, setExpensesValue] = useState('');
 	console.log(name, email, password, identificationtype, identification, documentDate, birthDate, revenueValue, expensesValue);
+	const [createUser] = useMutation(CREATE_USER);
 	const handleSubmit = async e => {
 	e.preventDefault();
 		await createUser({
@@ -112,11 +113,11 @@ export const Registeru = () => {
 								</div>
 								<div className="form-group">
 									<label htmlFor="ValIn">Valor de Ingresos</label>
-									<input type="number" className="form-control" id="ValIn" placeholder="Valor de Ingresos"  value={revenueValue} onChange={ e => setRevenueValue(e.target.value) }/>
+									<input type="number" className="form-control"  placeholder="Valor de Ingresos"  value={revenueValue} onChange={ e => setRevenueValue(e.target.value) }/>
 								</div>
 								<div className="form-group">
 									<label htmlFor="ValEg">Valor de Egresos</label>
-									<input type="number" className="form-control" id="ValEg" placeholder="Valor de Egresos"  value={expensesValue} onChange={ e => setExpensesValue(e.target.value) }/>
+									<input type="number" className="form-control"  placeholder="Valor de Egresos"  value={expensesValue} onChange={ e => setExpensesValue(e.target.value) }/>
 								</div>
 								<div className="form-group">
 									<label htmlFor="Email">Email</label>
