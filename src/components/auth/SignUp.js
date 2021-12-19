@@ -4,45 +4,10 @@ import Banner from '../../assets/img/auth/banner.svg';
 import './Auth.css'
 import {Link} from "react-router-dom";
 import { Registeru } from './Registeru';
-import { gql } from '@apollo/client';
- 
-const REGISTER = gql`
-	      mutation RegisterUser($email: String!, $password: String!, $name: String!) {
-			register(email: $email, password: $password, name: $name) {
-				token
-				user {
-					id
-					name
-					password
-					email
-					clientinfo {
-						id
-						name
-						email
-						password
-						phone
-						address
-						city
-						state
-						zip
-						country
-						company
-						website
-						logo
-						createdAt
-						updatedAt						
-			 		}
-					createdAt
-					updatedAt
-				}
-			}
-		}
-	`;
-
-
 
 export const SignUp = () => {
 	return (
+
 		<div className="container-fluid">
 			<div className="row mh-100vh">
 			<div className="col-lg-6 d-flex align-items-end" id="bg-block" style={{ backgroundImage: `url(${Banner})`, backgroundSize: '72%', backgroundPosition: 'center center' }} />
@@ -64,5 +29,6 @@ export const SignUp = () => {
 				</div>
 			</div>
 		</div>
+
 	);
 };

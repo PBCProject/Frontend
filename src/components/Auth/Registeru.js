@@ -2,10 +2,10 @@ import { gql, useMutation } from '@apollo/client';
 import { useState } from 'react';
 import React from 'react';
 
-const CREATE_USER = gql`
-	mutation createUser($name: String!, $email: String!, $password: String!, $identification: String!, $identificationtype: String!, $documentDate: String!, $birthDate: String!, $revenueValue: String!, $expensesValue: String!, $phone: String!, $address: String!, $city: String!, $state: String!, $country: String!, $zipcode: String!, $latitude: String!, $longitude: String!, $status: String!, $createdAt: String!, $updatedAt: String!) 
+const REGISTER_USER = gql`
+	mutation register($name: String!, $email: String!, $password: String!, $identification: String!, $identificationtype: String!, $documentDate: String!, $birthDate: String!, $revenueValue: String!, $expensesValue: String!, $phone: String!, $address: String!, $city: String!, $state: String!, $country: String!, $zipcode: String!, $latitude: String!, $longitude: String!, $status: String!, $createdAt: String!, $updatedAt: String!) 
 	{
-  		createUser(
+  		register(
 		  	name: $name,
 			email: $email,
 			password: $password,
@@ -28,6 +28,7 @@ const CREATE_USER = gql`
       			expensesValue
       			revenueValue
     		}
+			id
 		}
 	}
 `;
@@ -44,7 +45,7 @@ export const Registeru = () => {
 	const [revenueValue, setRevenueValue] = useState('');
 	const [expensesValue, setExpensesValue] = useState('');
 	console.log(name, email, password, identificationtype, identification, documentDate, birthDate, revenueValue, expensesValue);
-	const [createUser] = useMutation(CREATE_USER);
+	const [createUser] = useMutation(REGISTER_USER);
 	const handleSubmit = async e => {
 	e.preventDefault();
 		await createUser({
