@@ -7,8 +7,7 @@ const CREATE_USER = gql`
   		createUser(
 		  	user: $user					
 		)		
-		{
-		
+		{		
 			id	
 		}
 	}
@@ -78,6 +77,7 @@ export const Registeru = () => {
 					<div className="form-group">
 						<label htmlFor="TId">Tipo de Documento</label>
 						<select className="form-control"  onChange={ evt => setIdentificationType(evt.target.value) } value={identificationType}>
+							<option>Sleccion El tipo de Documento</option>
 							<option>C.C.</option>
 							<option>T.E.</option>
 							<option>NIT</option>
