@@ -35,24 +35,27 @@ export const Registeru = () => {
 	const [birthDate, setBirthDate] = useState('');
 	const [revenueValue, setRevenueValue] = useState('');
 	const [expensesValue, setExpensesValue] = useState('');
-	const [createUser] = useMutation(CREATE_USER);
-	const handleSubmit =   e => {
+	const [createUser,{data,loading,error }] = useMutation(CREATE_USER);
+	if(loading) return "Loading...";
+	if(error) return <pre>{error.message}</pre>
+	
+	const handleSubmit = async   e => {
 	e.preventDefault();
-	createUser({
+	await createUser({
 		variables: {
-			user: {
+		
 				name,
 				email,
 				password,
-				clientInfo: {
+		
 					identificationType,
 					identification,
 					documentDate,
 					birthDate,
 					revenueValue,
 					expensesValue
-				}
-			}
+	
+			
 		}
 	});
 	setName('');
@@ -73,7 +76,7 @@ export const Registeru = () => {
 				</h5>
 			</div>
 			<div className="card-body">
-				<form onSubmit={handleSubmit} >
+				<form onSubmit={handleSubmit}>
 					<div className="form-group">
 						<label htmlFor="allname">Nombre Completo</label>
 						<input type="text" className="form-control" placeholder="Nombre"  onChange={ evt => setName(evt.target.value) } value={name} />
