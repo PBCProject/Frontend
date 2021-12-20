@@ -2,7 +2,7 @@ import React from 'react';
 import Logon from '../../assets/img/logon.png';
 import Banner from '../../assets/img/auth/banner.svg';
 import './Auth.css'
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Registeru } from './Registeru';
 
 export const SignUp = () => {
