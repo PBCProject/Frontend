@@ -2,25 +2,14 @@ import React, { useState } from 'react';
 import { gql, useMutation } from '@apollo/client';
 
 const CREATE_USER = gql`
-	mutation createUser($user: UserInput!) 
+	mutation CreateUser($user: UserInput!) 
 	{
   		createUser(
-		  user: {
-				name: $name,
-				email: $email,
-				password: $password,
-				clientInfo: {
-					identificationType: $identificationType,
-					identification: $identification,
-					documentDate: $documentDate,
-					birthDate: $birthDate,
-					revenueValue: $revenueValue,
-					expensesValue: $expensesValue
-				}				
-		  	}
-		)
+		  	user: $user					
+		)		
 		{
-			id
+		
+			id	
 		}
 	}
 `;
@@ -35,27 +24,26 @@ export const Registeru = () => {
 	const [birthDate, setBirthDate] = useState('');
 	const [revenueValue, setRevenueValue] = useState('');
 	const [expensesValue, setExpensesValue] = useState('');
-	const [createUser,{data,loading,error }] = useMutation(CREATE_USER);
-	if(loading) return "Loading...";
-	if(error) return <pre>{error.message}</pre>
-	
-	const handleSubmit = async   e => {
+	const [createUser] = useMutation(CREATE_USER);
+	const handleSubmit =   e => {
 	e.preventDefault();
-	await createUser({
+	const revenue= parseFloat(revenueValue);
+	const expenses= parseFloat(expensesValue);
+	createUser({
 		variables: {
-		
+			user:{
 				name,
 				email,
 				password,
-		
+				clientInfo:{
 					identificationType,
 					identification,
 					documentDate,
 					birthDate,
-					revenueValue,
-					expensesValue
-	
-			
+					revenueValue:revenue,
+					expensesValue:expenses
+				}	
+			}
 		}
 	});
 	setName('');
@@ -67,6 +55,8 @@ export const Registeru = () => {
 	setBirthDate('');
 	setRevenueValue('');
 	setExpensesValue('');
+
+
 	}
 	return (
 		<div id="registerU">
@@ -135,3 +125,4 @@ export const Registeru = () => {
 
 );
 }
+export default Registeru;
