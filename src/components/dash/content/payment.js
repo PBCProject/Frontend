@@ -1,28 +1,26 @@
-export const Mregfun = () => {
+export const Payment = () => {
 	return (
 		<>
-			<button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-				Registrar funcionario
-			</button>
-
 			<div className="container">
 				<div className="modal-dialog" role="document">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h5 className="modal-title">Registro funcionario</h5>
+							<h5 className="modal-title">Pagar</h5>
 						</div>
 						<div className="modal-body">
 							<form id="primero">
-								<label htmlFor=""> Nombre completo:</label>
-								<input type="text" className="form-control" />
-								<label htmlFor=""> Usuario:</label>
-								<input type="text" className="form-control" />
-								<label htmlFor=""> Contraseña:</label>
-								<input type="password" className="form-control" />
-
+								<label htmlFor=""> Producto:</label>
+								<select type="number" classNameName="form-control">
+									<option value={1}>Credito 1</option>
+									<option value={2}>Credito 2</option>
+									<option value={3}>3</option>
+									<option value={4}>4</option>
+									<option value={5}>5</option>
+									<option value={6}>6</option>
+								</select>
 								<div className="modal-footer">
 									<button type="button" className="btn btn-primary">
-										Registrar
+										Pagar
 									</button>
 									<button type="reset" className="btn btn-secondary" data-bs-dismiss="modal">
 										Cancelar

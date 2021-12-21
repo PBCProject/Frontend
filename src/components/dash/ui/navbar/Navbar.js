@@ -1,10 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../auth/authContext';
 import { Notifications } from '../notifications/Notifications';
 import './Navbar.css';
 
 export const Navbar = ({ title = 'Dashboard' }) => {
+	const { data, dispatch } = useContext(AuthContext);
+	const navigate = useNavigate();
 	const location = useLocation();
 	const [notification, setNotification] = useState(false);
 	return (
@@ -42,10 +45,10 @@ export const Navbar = ({ title = 'Dashboard' }) => {
 					<ul className="navbar-nav justify-content-end">
 						<li className="nav-item d-flex align-items-center">
 							<a className="nav-link text-body font-weight-bold px-0">
-							<Link to="/profile" className="nav-link text-body p-0">
-								<i className="fa fa-user me-sm-1" />
-								<span className="d-sm-inline d-none">User</span>
-							</Link>
+								<Link to="/profile" className="nav-link text-body p-0">
+									<i className="fa fa-user me-sm-1" />
+									<span className="d-sm-inline d-none">{data.user.name}</span>
+								</Link>
 							</a>
 						</li>
 						<li className="nav-item px-3 d-flex align-items-center">
@@ -62,6 +65,14 @@ export const Navbar = ({ title = 'Dashboard' }) => {
 								</div>
 								{notification && <Notifications />}
 							</div>
+						</li>
+						<li
+							className="nav-item px-3 d-flex align-items-center"
+							onClick={() => {
+								dispatch({ type: 'LOGOUT' });
+								navigate('/auth/login');
+							}}>
+							<i className="fas fa-sign-out-alt fixed-plugin-button-nav cursor-pointer" />
 						</li>
 					</ul>
 				</div>

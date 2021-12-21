@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 import App from './App';
+import { setContext } from '@apollo/client/link/context';
 
-const client = new ApolloClient({
-    uri: "http://localhost:4000/",
-    cache: new InMemoryCache()
+const authLink = setContext((_, { headers }) => {
+	const token = localStorage.getItem('token');
+	return {
+		headers: {
+			...headers,
+			authorization: token ? `Bearer ${token}` : '',
+		},
+	};
 });
 
-ReactDOM.render( <ApolloProvider client = { client }> <App /> </ApolloProvider>, document.getElementById('root'));
+const client = new ApolloClient({
+	link: authLink.concat(createHttpLink({ uri: 'http://localhost:4000' })),
+	cache: new InMemoryCache(),
+});
+
+ReactDOM.render(
+	<ApolloProvider client={client}>
+		<App />
+	</ApolloProvider>,
+	document.getElementById('root')
+);

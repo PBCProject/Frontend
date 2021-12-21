@@ -1,12 +1,12 @@
 import { Route, Routes } from 'react-router';
-import { SignIn } from '../components/Auth/SignIn';
-import { SignUp } from '../components/Auth/SignUp';
+import { Login } from '../components/auth/login';
+import { Register } from '../components/auth/register';
 
 export const AuthRoutes = () => {
 	return (
 		<Routes>
-			<Route path="login" element={<SignIn />} />
-			<Route path="register" element={<SignUp />} />
+			<Route path="login" element={<Login />} />
+			<Route path="register" element={<Register />} />
 		</Routes>
 	);
 };

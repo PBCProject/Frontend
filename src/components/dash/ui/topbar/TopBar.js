@@ -1,28 +1,20 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../auth/authContext';
 import { BarItem } from './BarItem';
 import './TopBar.css';
 
-const BarItems = [
-	{ route: '/credits', title: 'Créditos' },
-	{ route: '/historial', title: 'Historial' },
-	{ route: '/prorroga', title: 'Prórroga' },
-	{ route: '/certificados', title: 'Certificados' },
-	{ route: '/pagar', title: 'Pagar' },
-	{ route: '/mensajes', title: 'Mensajes' },
-	{ route: '/cuentas', title: 'Cuentas' },
-	{ route: '/registerf', title: 'Resgitro' },
-	{ route: '/help', title: 'Ayuda' },
-
-];
-
-export const TopBar = () => {
+export const TopBar = ({ BarItems }) => {
+	const { data } = useContext(AuthContext);
+	const isAdmin = data.user.role.name === 'Administrador';
 	return (
 		<div id="menu" className="head">
 			<nav>
 				<ul>
-					{BarItems.map((item, index) => (
-						<BarItem key={index} {...item} />
-					))}
+					{BarItems.map(([path, Component, title, options], index) => {
+						if (options && (options.hide || (options.isAdmin && !isAdmin))) return undefined;
+						return <BarItem key={index} route={path} title={title} />;
+					})}
 				</ul>
 			</nav>
 		</div>
