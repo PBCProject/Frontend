@@ -14,36 +14,29 @@ const RESPONSE_MUTATION = gql`
 export const CreditResponseAdmin = ({ creditRequest, adminResponse }) => {
 	const { data: authData } = useContext(AuthContext);
 	const { values, handleInputChange, reset } = useForm();
-	console.log(creditRequest);
-	console.log({
-		admin: authData.user.id,
-		creditRequest: creditRequest.id,
-		amountAproved: creditRequest.amountReq,
-		interest: +values.interest,
-		isApproved: values.isApproved == 'true',
-		message: values.message,
-	});
 	const [createCreditResponse] = useMutation(RESPONSE_MUTATION);
 	const handleSubmit = e => {
 		e.preventDefault();
-		createCreditResponse({
-			variables: {
-				creditResponse: {
-					creditResponse: {
-						admin: authData.user.id,
-						creditRequest: creditRequest.id,
-						amountAproved: creditRequest.amountReq,
-						interest: values.interest,
-						isApproved: values.isApproved,
-						message: values.message,
-					},
+		adminResponse(null);
+		const async = async () => {
+			const creditResponse = {
+				admin: authData.user.id,
+				creditRequest: creditRequest.id,
+				amountAproved: creditRequest.amountReq,
+				interest: +values.interest,
+				isApproved: values.isApproved == 'true',
+				message: values.message,
+			};
+			console.log(creditResponse);
+			const { data } = await createCreditResponse({
+				variables: {
+					creditResponse,
 				},
-			},
-		}).then(res => {
-			console.log(res);
-			alert('El credito ha sido resuelto');
-			reset();
-		});
+			});
+			alert('Credit Response Created');
+			adminResponse(null);
+		};
+		async();
 	};
 	return (
 		<form className="card p-5">
